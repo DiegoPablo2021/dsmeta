@@ -10,22 +10,18 @@ type Props = {
 };
 
 function handleClick(id: number) {
-  axios(`${BASE_URL}/sales/${id}/notification`).then((response) => {
+  axios(`${BASE_URL}/sales/${id}/notification`)
+  .then((response) => {
     toast.info("SMS enviado com sucesso");
   });
 }
 
 function NotificationButton({saleId}:Props) {
   return (
-    <div
-      className="dsmeta-red-btn"
-      onClick={() => {
-        handleClick(saleId);
-      }}
-    >
+    <div className="dsmeta-red-btn" onClick={() => handleClick(saleId)}>
       <img src={icon} alt="Notification" />
     </div>
-  );
+  )
 }
 
 export default NotificationButton;
